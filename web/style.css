@@ -1,0 +1,45 @@
+:root {
+  /* Text */
+  --text-primary: #fff8f2;
+  --text-secondary: #d9c9f3;
+  --text-accent: #ffd97d;
+  --text-link: #a3d2f2;
+
+  /* Backgrounds */
+  --bg-hero: linear-gradient(to bottom, #4b367c, #a17cc1, #fbc2eb, #cbe8f7);
+  --bg-card: #3a2c5a;
+  --bg-admin: #2d1f4d;
+
+  /* Buttons/CTAs */
+  --btn-primary: #6f4e37;
+  --btn-primary-hover: #b08968;
+  --btn-secondary: #a3d2f2;
+  --btn-secondary-hover: #ffd97d;
+
+  /* Stars */
+  --star-ivory: #fff8f2;
+  --star-gold: #ffd97d;
+  --star-pink: #fecde6;
+  --shooting-star: #ffd97d;
+  --hover-glow: 0 0 12px #ffd97d;
+
+  /* Project/Skills */
+  --project-title: #ffd97d;
+  --project-tags: #a3d2f2;
+  --skill-fill: #6f4e37;
+  --skill-track: #b08968;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg-hero);
+  overflow: hidden;
+  color: var(--text-primary);
+  height: 100vh;
+}
