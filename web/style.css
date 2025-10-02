@@ -1,4 +1,8 @@
 :root {
+  /* Fonts */
+  --primary-font: "Poppins", sans-serif;
+  --highlight-font: "Handlee", sans-serif;
+
   /* Text */
   --text-primary: #fff8f2;
   --text-secondary: #d9c9f3;
@@ -37,9 +41,38 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--primary-font);
   background: var(--bg-hero);
   overflow: hidden;
   color: var(--text-primary);
   height: 100vh;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  text-shadow: var(--hover-glow);
+}
+
+.hero .highlight {
+  font-family: var(--highlight-font);
+  color: var(--text-accent);
+  text-shadow: var(--hover-glow);
+}
+
+.hero .typing {
+  font-size: 1.5rem;
+  margin-top: 15px;
+  color: var(--text-primary);
 }
