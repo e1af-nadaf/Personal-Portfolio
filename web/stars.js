@@ -1,5 +1,5 @@
 const starsContainer = document.querySelector(".stars-container");
-const numberOfStars = 100;
+const numberOfStars = 200;
 
 for (let i = 0; i < numberOfStars; i++) {
   const star = document.createElement("div");
