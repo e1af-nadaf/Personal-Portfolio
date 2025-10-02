@@ -6,7 +6,7 @@ let currText = "";
 let typingElement = document.querySelector(".typing");
 
 function type() {
-  if (charIndex < textArray[index].lenght) {
+  if (charIndex < textArray[index].length) {
     currText += textArray[index].charAt(charIndex);
     typingElement.textContent = currText;
     charIndex++;
