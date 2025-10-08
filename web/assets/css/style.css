@@ -1,0 +1,81 @@
+:root {
+  /* Fonts */
+  --primary-font: "Poppins", sans-serif;
+  --highlight-font: "Handlee", sans-serif;
+
+  /* Text */
+  --text-primary: #fff8f2;
+  --text-secondary: #d9c9f3;
+  --text-accent: #ffd97d;
+  --text-link: #a3d2f2;
+
+  /* Backgrounds */
+  --bg-hero: linear-gradient(
+    to bottom,
+    #332653,
+    #4b367c,
+    #a17cc1,
+    #fbc2eb,
+    #cbe8f7
+  );
+  --bg-card: #3a2c5a;
+  --bg-admin: #2d1f4d;
+
+  /* Buttons/CTAs */
+  --btn-primary: #6f4e37;
+  --btn-primary-hover: #b08968;
+  --btn-secondary: #a3d2f2;
+  --btn-secondary-hover: #ffd97d;
+
+  /* Stars */
+  --star-ivory: #fff8f2;
+  --star-gold: #ffd97d;
+  --star-pink: #fecde6;
+  --shooting-star: #ffd97d;
+  --hover-glow: 0 0 12px #ffd97d;
+
+  /* Project/Skills */
+  --project-title: #ffd97d;
+  --project-tags: #a3d2f2;
+  --skill-fill: #6f4e37;
+  --skill-track: #b08968;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--primary-font);
+  background: var(--bg-hero);
+  color: var(--text-primary);
+  overflow: auto;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: -1;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  text-shadow: var(--hover-glow);
+}
+
+.hero .highlight {
+  font-family: var(--highlight-font);
+  color: var(--text-accent);
+  text-shadow: var(--hover-glow);
+}
