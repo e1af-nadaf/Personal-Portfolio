@@ -1,23 +1,51 @@
 const overlay = document.querySelector(".section-overlay");
-let isScrolling = false;
+const hero = document.querySelector(".hero");
+const about = document.querySelector(".about");
+const scrollArrow = document.querySelector(".scroll-down");
 
-window.addEventListener("wheel", (e) => {
-  // Only trigger on scroll down
-  if (isScrolling || e.deltaY <= 0) return;
-  isScrolling = true;
+let lastScrollY = 0; // track previous scroll position
 
-  overlay.style.opacity = 1; // fade in blackout
+window.addEventListener("scroll", () => {
+  const currentScrollY = window.scrollY;
 
-  setTimeout(() => {
-    const sections = document.querySelectorAll("section");
-    const currentIndex = Array.from(sections).findIndex(
-      (s) => s.getBoundingClientRect().top >= 0
-    );
+  // Only trigger blackout effect when scrolling down
+  if (currentScrollY > lastScrollY) {
+    const heroRect = hero.getBoundingClientRect();
+    const aboutRect = about.getBoundingClientRect();
 
-    const nextIndex = Math.min(currentIndex + 1, sections.length - 1); // move only down
-    sections[nextIndex].scrollIntoView({ behavior: "smooth" });
+    if (heroRect.bottom > 0 && heroRect.top < 0) {
+      const scrolled = Math.min(
+        Math.abs(heroRect.top) / (hero.offsetHeight * 0.8),
+        1
+      );
+      overlay.style.opacity = scrolled;
+    } else if (aboutRect.top <= 0) {
+      overlay.style.opacity = 0;
+    }
+  } else {
+    // Scrolling up → blackout off
+    overlay.style.opacity = 0;
+  }
 
-    overlay.style.opacity = 0; // fade out blackout
-    isScrolling = false;
-  }, 400); // matches CSS transition duration
+  lastScrollY = currentScrollY;
 });
+
+// 🌟 Click on scroll arrow → slower, longer blackout
+if (scrollArrow) {
+  scrollArrow.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    // Fade in blackout slowly
+    overlay.style.transition = "opacity 1.6s ease";
+    overlay.style.opacity = 1;
+
+    // Smooth scroll to About
+    about.scrollIntoView({ behavior: "smooth" });
+
+    // Linger, then fade out slowly
+    setTimeout(() => {
+      overlay.style.transition = "opacity 1.6s ease";
+      overlay.style.opacity = 0;
+    }, 2000);
+  });
+}
