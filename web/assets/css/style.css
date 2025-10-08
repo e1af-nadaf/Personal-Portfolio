@@ -139,6 +139,27 @@ body {
   overflow: hidden;
 }
 
+.scroll-down {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.scroll-down i {
+  font-size: 3rem;
+  color: var(--bg-card);
+  animation: bounce 1.5s infinite;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.scroll-down i:hover {
+  color: linear-gradient(135deg, #ffd97d, #fecde6, #a17cc1);
+}
+
 /* shooting stars */
 
 .meteor {
@@ -194,5 +215,15 @@ body {
   100% {
     transform: translate(600px, 600px) rotate(45deg);
     opacity: 0;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
   }
 }
