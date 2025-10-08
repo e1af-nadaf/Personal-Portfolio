@@ -79,3 +79,9 @@ body {
   color: var(--text-accent);
   text-shadow: var(--hover-glow);
 }
+
+.hero .typing {
+  font-size: 1.5rem;
+  margin-top: 15px;
+  color: var(--text-primary);
+}
