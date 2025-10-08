@@ -84,6 +84,9 @@ body {
   font-size: 1.5rem;
   margin-top: 15px;
   color: var(--text-primary);
+  min-height: 4rem;
+  display: block;
+  overflow: hidden;
 }
 
 /* stars in bg */
