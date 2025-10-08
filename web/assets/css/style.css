@@ -116,9 +116,30 @@ body {
   border-color: #fff;
 }
 
+.hero .scroll-down {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.hero .scroll-down i {
+  font-size: 3rem;
+  color: var(--bg-card);
+  animation: bounce 1.5s infinite;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.hero .scroll-down i:hover {
+  color: linear-gradient(135deg, #ffd97d, #fecde6, #a17cc1);
+}
+
 /* stars in bg */
 
-.star {
+.hero .star {
   position: absolute;
   width: 2px;
   height: 2px;
@@ -128,7 +149,7 @@ body {
   animation: twinkle 1s infinite alternate;
 }
 
-.stars-container {
+.hero .stars-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -139,30 +160,9 @@ body {
   overflow: hidden;
 }
 
-.scroll-down {
-  position: absolute;
-  bottom: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  cursor: pointer;
-  z-index: 2;
-}
-
-.scroll-down i {
-  font-size: 3rem;
-  color: var(--bg-card);
-  animation: bounce 1.5s infinite;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.scroll-down i:hover {
-  color: linear-gradient(135deg, #ffd97d, #fecde6, #a17cc1);
-}
-
 /* shooting stars */
 
-.meteor {
+.hero .meteor {
   position: absolute;
   width: 120px;
   height: 2px;
@@ -179,7 +179,7 @@ body {
   animation: meteor-animation 1.2s linear forwards;
 }
 
-.meteor::before {
+.hero .meteor::before {
   content: "";
   position: absolute;
   width: 200px;
@@ -189,6 +189,21 @@ body {
   left: -80px;
   border-radius: 50%;
   filter: blur(2px);
+}
+
+/* blackout */
+
+.section-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85); /* dark blackout */
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 999;
 }
 
 /* Animations */
