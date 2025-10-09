@@ -46,6 +46,6 @@ if (scrollArrow) {
     setTimeout(() => {
       overlay.style.transition = "opacity 1.6s ease";
       overlay.style.opacity = 0;
-    }, 2000);
+    }, 900);
   });
 }
