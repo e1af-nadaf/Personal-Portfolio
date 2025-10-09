@@ -10,14 +10,7 @@
   --text-link: #a3d2f2;
 
   /* Backgrounds */
-  --bg-hero: linear-gradient(
-    to bottom,
-    #332653,
-    #4b367c,
-    #a17cc1,
-    #fbc2eb,
-    #cbe8f7
-  );
+  --bg-color: #0d0d1a;
   --bg-card: #3a2c5a;
   --bg-admin: #2d1f4d;
 
@@ -49,7 +42,7 @@
 
 body {
   font-family: var(--primary-font);
-  background: var(--bg-hero);
+  background: var(--bg-color);
   color: var(--text-primary);
   overflow: auto;
 }
@@ -174,7 +167,7 @@ body {
 /* about section */
 
 .about {
-  background: #4b367c;
+  background: var(--bg-color);
   color: var(--text-primary);
   min-height: 100vh;
   padding: 80px 20px;
@@ -251,7 +244,7 @@ body {
 
 .about .timeline .timeline-item .timeline-content .timeline-date {
   font-size: 0.9rem;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   display: block;
   margin-bottom: 5px;
   font-weight: 600;
@@ -276,6 +269,36 @@ body {
   opacity: 0;
   z-index: 999;
   transition: opacity 0.6s ease, backdrop-filter 0.6s ease;
+}
+
+/* project section */
+
+.projects {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--bg-color);
+  color: var(--text-primary);
+  overflow: hidden;
+}
+
+.projects .section-title {
+  text-align: center;
+  font-family: var(--highlight-font);
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+#constellation-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 1;
 }
 
 /* Animations */
